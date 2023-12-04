@@ -1,0 +1,33 @@
+/* styles.css */
+
+/* Загальні стилі для тіла сторінки */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Стилі для заголовка */
+h1 {
+    color: #333;
+}
+
+/* Стилі для посилань на книги */
+a {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #007bff; /* Колір тексту посилань */
+}
+
+a:hover {
+    text-decoration: underline; /* Підкреслення при наведенні на посилання */
+}
+
+/* Стилі для посилань унизу сторінки */
+a[href='/books/new'],
+a[href='/books/search'] {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+}

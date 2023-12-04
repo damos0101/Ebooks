@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Page</title>
+</head>
+<body>
+<h1>Пошук книги</h1>
+<p>Пошук за назвою</p>
+<form th:method="POST" th:action="@{/books/search}" th:object="${books}">
+  <input type="hidden" name="searchType" value="title">
+  <input type="text" name="title" placeholder="Введіть назву книги">
+  <button type="submit">Пошук</button>
+</form>
+<p>Пошук за автором</p>
+<form th:method="POST" th:action="@{/books/search}" th:object="${books}">
+  <input type="hidden" name="searchType" value="author">
+  <input type="text" name="author" placeholder="Введіть автора книги">
+  <button type="submit">Пошук</button>
+</form>
+<hr>
+
+<h2>Результати пошуку</h2>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Year</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Тут будуть результати пошуку -->
+  <tr th:each="book : ${books}">
+    <td th:text="${book.getId()}"></td>
+    <td th:text="${book.getTitle()}"></td>
+    <td th:text="${book.getAuthor()}"></td>
+    <td th:text="${book.getYear()}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

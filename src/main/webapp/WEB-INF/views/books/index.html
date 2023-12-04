@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-books App</title>
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body>
+<h1>E-books App</h1>
+
+</body>
+<p>Книги</p>
+<div th:each="book: ${books}">
+  <a th:href="@{/books/{id}(id=${book.getId()})}"
+     th:text="${book.getTitle() + ', ' + book.getYear() + ', ' + book.getAuthor()}">book
+  </a>
+</div>
+<br/>
+<hr/>
+<a href="/books/new">Додати нову книгу</a>
+<br/>
+<a href="/books/search">Шукати книгу</a>
+</html>
