@@ -8,13 +8,16 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "Book")
 public class Book {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "title")
     @Size(min = 2, max = 100, message = "Name should be between 2 and 100 characters")
     private String title;
+
     @Min(value = 1700, message = "Year should be greater than 1700")
     @Max(value = 2024, message = "Year should be lesser than 2024")
     @Column(name = "year")
